@@ -23,3 +23,4 @@ letters[18]
 letters[26]
 
 #2.6.3 Basic operations with the Cereal data
+#need the data set
