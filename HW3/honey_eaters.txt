@@ -1,0 +1,8 @@
+Day nrbirds
+sunday 3
+monday 2
+tuesday 5
+wednesday 0
+thursday 8
+friday 1
+saturday 2
