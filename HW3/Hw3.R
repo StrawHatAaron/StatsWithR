@@ -83,7 +83,3 @@ male_survivors
 #2.6.6 Managing Your workspace
 #list all the names of the objects in my workspace
 names(mget(ls()))
-
-
-
-
