@@ -6,6 +6,9 @@
 #****Professor will have to change this to what his working dir is.*******
 working_dir <- "/Users/ajm/documents/school/fa18/stat115a/R_programs/hw4/"
 #*************************************************************************
+# Load lubridate
+library(lubridate)
+
 
 #3.9.1 Titanic
 titanic_data <- read.table(paste(working_dir, "titanic.txt", sep=""), header=TRUE)
@@ -65,8 +68,28 @@ no_height <- subset(trees_meas, !is.na(height))
 table(no_height$treat)
 
 #3.9.4 Flux data
-flux <- read.table(paste(working_dir, "Fluxtower.csv", sep=""), fill=TRUE, header=TRUE, row.names = NULL)
+#1
+flux <- read.csv(file = paste(working_dir, "Fluxtower.csv", sep=""))
+flux
+names(flux)[1] <- "DateTime"
+names(flux)
+#2 Convert DateTime to a POSIXct class
+flux$DateTime <- dmy_hm(flux$DateTime)
+flux$DateTime
+#4
+flux$Quality <- ifelse(flux$ustar < 0.15, "bad", "good")
 head(flux)
+#5 add a month and year column to the data set.
+flux$month <- month(flux$DateTime)
+flux$month
+flux$year <- year(flux$DateTime)
+flux$year
+
+#3.9.5 Alphabet Aerobics 3
+#1 read in the file and count the character on each line
+lyric <- readLines(paste(working_dir, "alphabet.txt", sep=""))
+nchar(lyric)
+
 
 
 
